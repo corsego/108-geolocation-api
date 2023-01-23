@@ -8,3 +8,10 @@
 
   <%= button_to "Destroy this location", @location, method: :delete %>
 </div>
+
+<%#= @location.nearbys(10).inspect %>
+<% @location.nearbys(10).each do |location| %>
+  <%= location.name %>
+  <%= location.distance_to(@location) %>
+  <br>
+<% end %>

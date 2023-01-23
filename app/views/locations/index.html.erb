@@ -2,6 +2,12 @@
 
 <h1>Locations</h1>
 
+<%= form_with url: locations_path, method: :get do |form| %>
+  <%= form.text_field :place, value: params[:place] %>
+  <%= form.select :distance, [10, 100], selected: params[:distance] %>
+  <%= form.submit %>
+<% end %>
+
 <div id="locations">
   <% @locations.each do |location| %>
     <%= render location %>

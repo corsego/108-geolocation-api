@@ -88,6 +88,7 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    geocoder (1.8.1)
     globalid (1.0.1)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  geocoder (~> 1.8)
   importmap-rails
   jbuilder
   pg (~> 1.1)
