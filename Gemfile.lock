@@ -110,6 +110,7 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapkick-rb (0.1.0)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -217,6 +218,7 @@ DEPENDENCIES
   geocoder (~> 1.8)
   importmap-rails
   jbuilder
+  mapkick-rb
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)

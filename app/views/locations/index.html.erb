@@ -2,6 +2,19 @@
 
 <h1>Locations</h1>
 
+<%#= js_map [{latitude: 37.7829, longitude: -122.4190,
+             label: 'My home', tooltip: 'hello!'}],
+           id: "cities-map", width: "800px", height: "500px",
+           markers: {color: "#f84d4d"},
+           zoom: 15,
+           tooltips: {hover: false, html: true},
+           style: "mapbox://styles/mapbox/outdoors-v12" %>
+
+<%= js_map locations_path(format: :json, place: params[:place], distance: params[:distance]),
+             width: "800px", height: "500px",
+             controls: true,
+             tooltips: { hover: false, html: true } %>
+
 <%= form_with url: locations_path, method: :get do |form| %>
   <%= form.text_field :place, value: params[:place] %>
   <%= form.select :distance, [10, 100], selected: params[:distance] %>
@@ -11,6 +24,13 @@
 <div id="locations">
   <% @locations.each do |location| %>
     <%= render location %>
+
+    <%#= js_map [{latitude: location.latitude, longitude: location.longitude,
+             label: location.name, tooltip: html_link_to(location)}],
+             width: "800px", height: "500px",
+             controls: true,
+             tooltips: {hover: false, html: true} %>
+
     <p>
       <%= link_to "Show this location", location %>
     </p>
